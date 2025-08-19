@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>IACC Diwali Celebration</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #fffdf7;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background: linear-gradient(135deg, #6A1B9A, #00897B);
+      color: #fff;
+      padding: 2rem 1rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header img {
+      max-width: 140px;
+      margin-bottom: 1rem;
+    }
+
+    header h1 {
+      margin: 0 0 0.5rem;
+      font-size: 2.5rem;
+      letter-spacing: 2px;
+    }
+
+    header p {
+      margin: 0;
+      font-size: 1.2rem;
+    }
+
+    .info {
+      padding: 2rem 1rem;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .info h2 {
+      color: #6A1B9A;
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .countdown {
+      background: #00897B;
+      color: #fff;
+      padding: 1rem;
+      margin: 2rem auto;
+      border-radius: 12px;
+      max-width: 500px;
+      font-size: 1.4rem;
+      font-weight: bold;
+      text-align: center;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+    }
+
+    .rsvp-section {
+      background: #fff;
+      padding: 2rem 1rem;
+      margin: 2rem auto;
+      max-width: 900px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      border-radius: 12px;
+    }
+
+    .rsvp-section h2 {
+      color: #E65100;
+      margin-top: 0;
+      font-size: 1.8rem;
+      text-align: center;
+    }
+
+    .rsvp-section iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+      border-radius: 6px;
+    }
+
+    footer {
+      margin-top: auto;
+      background: #6A1B9A;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.95rem;
+    }
+
+    footer a {
+      color: #FFD54F;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="images/logo.png" alt="Indo American Cultural Club Logo" />
+    <h1>IACC Diwali Celebration</h1>
+    <p>Join us for an evening of lights, culture & joy! 🪔</p>
+  </header>
+
+  <section class="info">
+    <h2>Event Details</h2>
+    <p><strong>Date:</strong> Saturday, October 11, 2025</p>
+    <p><strong>Time:</strong> 4:00 PM – 9:00 PM</p>
+    <p><strong>Venue:</strong> <span id="address">[Add Event Address Here]</span></p>
+  </section>
+
+  <section class="countdown" id="countdown">
+    Countdown to Diwali Event: Loading...
+  </section>
+
+  <section class="rsvp-section">
+    <h2>RSVP Now 🪔</h2>
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdFKADEg3YjwnQ8BpGreU0D92b3UM8eC-mP2kJar2AoJYq56Q/viewform?embedded=true" width="640" height="1012" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+  </section>
+
+  <footer>
+    <p>Follow us on Instagram: 
+      <a href="https://instagram.com/ig_iacc" target="_blank">@ig_iacc</a>  
+    </p>
+    <p>Hosted by <strong>Indo American Cultural Club</strong> 🦚</p>
+  </footer>
+
+  <script>
+    // Countdown Timer Script
+    const eventDate = new Date("Oct 11, 2025 16:00:00").getTime();
+    const countdownEl = document.getElementById("countdown");
+
+    setInterval(() => {
+      const now = new Date().getTime();
+      const distance = eventDate - now;
+
+      if (distance < 0) {
+        countdownEl.innerHTML = "🎉 The Diwali Celebration has started!";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const mins = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const secs = Math.floor((distance % (1000 * 60)) / 1000);
+
+      countdownEl.innerHTML = `⏳ ${days}d ${hours}h ${mins}m ${secs}s left`;
+    }, 1000);
+  </script>
+</body>
+</html>
